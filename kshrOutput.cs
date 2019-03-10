@@ -2,9 +2,9 @@ using System;
 
 namespace kshrTools
 {
-    class kshrOutput
+    static class kshrOutput
     {
-        private void sendMessage (string message, string msgchar, ConsoleColor color) {
+        static private void sendMessage (string message, string msgchar, ConsoleColor color) {
             ConsoleColor previousColor = Console.ForegroundColor;
             Console.ForegroundColor = color;
             string[] splitMessage = message.Split("\n");
@@ -17,7 +17,7 @@ namespace kshrTools
             Console.ForegroundColor = previousColor;
         }
 
-        private void sendMessage (string message, string sender, string msgchar, ConsoleColor color) {
+        static private void sendMessage (string message, string sender, string msgchar, ConsoleColor color) {
             ConsoleColor previousColor = Console.ForegroundColor;
             Console.ForegroundColor = color;
             string[] splitMessage = message.Split("\n");
@@ -29,42 +29,42 @@ namespace kshrTools
             }
             Console.ForegroundColor = previousColor;
         }
-        public void info (string message)
+        static public void info (string message)
         {
             sendMessage(message, ":", ConsoleColor.Blue);
         }
 
-        public void info (string message, string sender)
+        static public void info (string message, string sender)
         {
             sendMessage(message, sender, ":", ConsoleColor.Blue);
         }
 
-        public void error (string message)
+        static public void error (string message)
         {
             sendMessage(message, "!", ConsoleColor.Red);
         }
 
-        public void error (string message, string sender)
+        static public void error (string message, string sender)
         {
             sendMessage(message, sender, "!", ConsoleColor.Red);
         }
 
-        public void warning (string message)
+        static public void warning (string message)
         {
             sendMessage(message, ".", ConsoleColor.Yellow);
         }
 
-        public void warning (string message, string sender)
+        static public void warning (string message, string sender)
         {
             sendMessage(message, sender, ".", ConsoleColor.Yellow);
         }
 
-        public void success (string message)
+        static public void success (string message)
         {
             sendMessage(message, "#", ConsoleColor.Green);
         }
 
-        public void success (string message, string sender)
+        static public void success (string message, string sender)
         {
             sendMessage(message, sender, "#", ConsoleColor.Green);
         }
